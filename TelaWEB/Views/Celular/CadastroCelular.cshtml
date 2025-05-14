@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "CadastroCelular";
+}
+<div class="tableCad3">
+    <form name="form1" action="/Pessoa/CadastrarCelular" method="post">
+        <h2>Cadastro Celular</h2>
+
+        <div class="form-group">
+
+            <label for="exampleInputEmail1">Modelo </label>
+            <input type="text"
+                   class="form-control"
+                   id="exampleInputEmail1"
+                   aria-describedby="emailHelp"
+                   placeholder="Informe o Modelo"
+                   name="modelo">
+
+            <label for="exampleInputEmail1">Marca </label>
+            <input type="text"
+                   class="form-control"
+                   id="exampleInputEmail1"
+                   aria-describedby="emailHelp"
+                   placeholder="Informe a Marca"
+                   name="marca">
+
+            <label for="exampleInputEmail1">Estado Físico </label>
+            <input type="text"
+                   class="form-control"
+                   id="exampleInputEmail1"
+                   aria-describedby="emailHelp"
+                   placeholder="Informe o Estado Físico"
+                   name="estadoFisico">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar Celular</button>
+
+    </form>
+</div>

@@ -1,0 +1,21 @@
+﻿
+
+@{
+    ViewBag.Title = "TelaLogin";
+}
+
+@if (Session["LoginAcesso"] != null)
+{
+    <div>
+        <nav>
+            <ul class="NAV">
+                <li><a href="/Celular/ListaCelular"> CELULARES </a></li>
+                <li><a href="/Proposta/TelaPropostaJuridica"> PROPOSTAS </a></li>
+                <li><a href="/Pessoa/Sair"> SAIR </a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+}
+    

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TelaWEB.Models.Proposta>
+
+
+@{
+    ViewBag.Title = "TelaPropostaJuridica";
+}
+
+<h2>Tela Proposta Fisica</h2>
+
+@foreach (var item in Model)
+{
+    <div class="Table_propostaF">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Data de pegar o celular</th>
+                    <th scope="col">Horario de chegada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@item.Celular.modelo</td>
+                    <td>@item.valor</td>
+                    <td>@item.status</td>
+                    <td>@item.data</td>
+                    <td>@item.horario</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+}

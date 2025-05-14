@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TelaWEB.Models.Celular>
+
+@{
+    ViewBag.Title = "ListaCelular";
+
+}
+
+<div>
+    <nav>
+        <ul class="NAV">
+            <li><a href="/Home/DashbordJuridico">VOLTAR</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="TableCelular">
+        <h2>DONO: @item.Pessoa.nome</h2>
+        <div>
+            <h3>Modelo: @item.modelo </h3>
+        </div>
+        <p>Marca: @item.marca </p>
+        <p>Estado Fisico: @item.estadoFisico</p>
+        <a href="/Proposta/CadastroProposta?id=@item.idCelular">Enviar Proposta</a>
+    </div>
+}
+

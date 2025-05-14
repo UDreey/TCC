@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "CadastroProposta";
+}
+
+<div class="tableCad3">
+    <form name="form" action="/Proposta/CadastroProposta" method="post">
+        <h1>Proposta</h1>
+        <div class="form">
+
+            <div class="form-group">
+               
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="informe o valor"
+                       name="valor">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Data </label>
+                <input type="date"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe a data"
+                       name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Horário </label>
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe o horário"
+                       name="horario">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+
+    </form>
+</div>

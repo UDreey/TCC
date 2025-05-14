@@ -1,0 +1,127 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+.tda {
+    background-image: url(Imagens/bodyi.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    
+}
+
+.NAV {
+    padding:1%;
+    margin:1%;
+    height:20%;
+    text-align: center;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.NAV li {
+    list-style: none;
+    display:inline;
+    padding:15px;
+
+
+}
+
+.NAV li a {
+    color:azure;
+    display:inline-block;
+    display:inline;
+    text-decoration:none;
+    padding:20px;
+    border-radius:15px;
+}
+
+.NAV a:hover {
+  background-color: rgb(24,139,233); 
+}
+.NAV a:active {
+    font-size: 15px;
+}
+
+.bvn {
+    margin: 0;
+    padding-top:15%;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    font-family:Arial;
+    
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    color:azure;
+    
+}
+
+.group {
+    margin: 0%;
+    padding: 0%;
+    display: block;
+    margin-top:15%;
+}
+
+.footer {
+    margin: 1%;
+    padding: 1%;
+    background-color:#181D31;
+    display: flex;
+    color:aliceblue;
+}
+
+
+.header {
+    margin: 1%;
+    padding: 1%;
+    background-color: #181D31;
+    display: flex;
+    color: aliceblue;
+}
+
+.TelaDesejarCadastar {
+    background-color: rgba(0,0,0,0.9);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 20%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+
+.TelaDesejarCadastar h1 {
+    color:azure;
+}
+
+
+
+
+.sb {
+    padding:1%;
+    margin:1%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 12%;
+    transform: translate(-50%, -50%);
+}
+
+
+.sb h2{
+
+    font-family:Secular One;
+}

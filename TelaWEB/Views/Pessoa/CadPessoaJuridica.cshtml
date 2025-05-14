@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "CadastroPessoaJuridica";
+}
+
+<div>
+    <nav>
+        <ul class="NAV">
+            <li><a href="/Home/Index">VOLTAR PARA TELA INICIAL</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+<div class="tableCad ">
+    
+    <form name="form1" action="/Pessoa/CadPessoaJuridica" method="post">
+
+        <h1>Cadastro</h1>
+        <div class="form-group">
+
+            <label for="exampleInputEmail1">Email </label>
+            <div class="input">
+                <input type="email"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Email"
+                       name="email">
+            </div>
+            <label for="exampleInputEmail1">Senha </label>
+
+            <div class="input">
+                <input type="password"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Sua Senha"
+                       name="senha">
+            </div>
+            <label for="exampleInputEmail1">Telefone </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Telefone"
+                       name="telefone">
+            </div>
+            <label for="exampleInputEmail1">Nome </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Nome"
+                       name="nome">
+            </div>
+
+            <label for="exampleInputEmail1">Nome da Empresa </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe O Nome Da Empresa"
+                       name="nomeEmpresa">
+            </div>
+
+            <label for="exampleInputEmail1">CNPJ </label>
+            <div class="input">
+                <input type="number"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe O CNPJ"
+                       name="cnpj">
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+    </form>
+</div>

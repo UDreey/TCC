@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c6bc86e0e7e04da7a87d35157ce05281" Name="Diagram1">
+        <EntityTypeShape EntityType="BDTCCModel.Celular" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.Endereco" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.Pessoa" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.PessoaFisica" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.PessoaJuridica" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.Proposta" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTCCModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BDTCCModel.FK_Celular_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="BDTCCModel.FK_Proposta_Celular" ManuallyRouted="false" />
+        <AssociationConnector Association="BDTCCModel.FK_Endereco_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="BDTCCModel.FK_PessoaFisica_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="BDTCCModel.FK_PessoaJuridica_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="BDTCCModel.FK_Proposta_PessoaJuridica" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

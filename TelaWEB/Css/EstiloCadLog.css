@@ -1,0 +1,103 @@
+﻿.TableLogin {
+    background-color: rgba(0,0,0,0.9);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 20%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: aliceblue;
+    display: inline-flex;
+}
+
+.TableLogin input{
+
+    padding:20px;
+}
+
+
+
+.tableCad {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 28%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 15px;
+    color:aliceblue;
+    padding: 85px;  
+    display: inline-flex;
+}
+
+.tableCad2 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 15px;
+    color: aliceblue;
+    padding: 85px;
+    display: inline-flex;
+}
+
+
+.tableCad3 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 15px;
+    color: aliceblue;
+    padding: 85px;
+    display: inline-flex;
+}
+
+
+.tableCad5 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 15px;
+    color: aliceblue;
+    padding: 85px;
+    display: inline-flex;
+}
+
+.form-group input {
+    padding-left: 20%;
+    display: flex;
+    margin-top: 5px;
+    padding: 20px;
+}
+
+button {
+    padding: 100%;
+    width: 100%;
+    font-size: 1em;
+}
+
+
+
+#h1{
+
+    margin-left:35%;
+    color:aliceblue;
+}
+
+#img {
+    width:50%;
+    margin-left:35%;
+    display:flex;
+
+    
+    
+}

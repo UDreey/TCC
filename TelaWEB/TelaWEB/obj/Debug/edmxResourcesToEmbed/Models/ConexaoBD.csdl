@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDTCCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Celular">
+    <Key>
+      <PropertyRef Name="idCelular" />
+    </Key>
+    <Property Name="idCelular" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estadoFisico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Celular_Pessoa" FromRole="Celular" ToRole="Pessoa" />
+    <NavigationProperty Name="Proposta" Relationship="Self.FK_Proposta_Celular" FromRole="Celular" ToRole="Proposta" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="idEndereco" />
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="cep" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="bairro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rua" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cidade" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_Endereco_Pessoa" FromRole="Endereco" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="senha" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tipoPessoa" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Celular" Relationship="Self.FK_Celular_Pessoa" FromRole="Pessoa" ToRole="Celular" />
+    <NavigationProperty Name="Endereco" Relationship="Self.FK_Endereco_Pessoa" FromRole="Pessoa" ToRole="Endereco" />
+    <NavigationProperty Name="PessoaFisica" Relationship="Self.FK_PessoaFisica_Pessoa" FromRole="Pessoa" ToRole="PessoaFisica" />
+    <NavigationProperty Name="PessoaJuridica" Relationship="Self.FK_PessoaJuridica_Pessoa" FromRole="Pessoa" ToRole="PessoaJuridica" />
+  </EntityType>
+  <EntityType Name="PessoaFisica">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="cpf" Type="Int64" Nullable="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="dataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NumeroCasa" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_PessoaFisica_Pessoa" FromRole="PessoaFisica" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="PessoaJuridica">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="nomeEmpresa" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cnpj" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.FK_PessoaJuridica_Pessoa" FromRole="PessoaJuridica" ToRole="Pessoa" />
+    <NavigationProperty Name="Proposta" Relationship="Self.FK_Proposta_PessoaJuridica" FromRole="PessoaJuridica" ToRole="Proposta" />
+  </EntityType>
+  <EntityType Name="Proposta">
+    <Key>
+      <PropertyRef Name="idProposta" />
+    </Key>
+    <Property Name="idProposta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPessoaJuridica" Type="Int32" Nullable="false" />
+    <Property Name="idCelular" Type="Int32" Nullable="false" />
+    <Property Name="valor" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="horario" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Celular" Relationship="Self.FK_Proposta_Celular" FromRole="Proposta" ToRole="Celular" />
+    <NavigationProperty Name="PessoaJuridica" Relationship="Self.FK_Proposta_PessoaJuridica" FromRole="Proposta" ToRole="PessoaJuridica" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Celular_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Celular" Type="Self.Celular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Celular">
+        <PropertyRef Name="idPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proposta_Celular">
+    <End Role="Celular" Type="Self.Celular" Multiplicity="1" />
+    <End Role="Proposta" Type="Self.Proposta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Celular">
+        <PropertyRef Name="idCelular" />
+      </Principal>
+      <Dependent Role="Proposta">
+        <PropertyRef Name="idCelular" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="idPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaFisica_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="PessoaFisica" Type="Self.PessoaFisica" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="PessoaFisica">
+        <PropertyRef Name="idPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaJuridica_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="PessoaJuridica" Type="Self.PessoaJuridica" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="PessoaJuridica">
+        <PropertyRef Name="idPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proposta_PessoaJuridica">
+    <End Role="PessoaJuridica" Type="Self.PessoaJuridica" Multiplicity="1" />
+    <End Role="Proposta" Type="Self.Proposta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaJuridica">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Proposta">
+        <PropertyRef Name="idPessoaJuridica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDTCCEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Celular" EntityType="Self.Celular" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" />
+    <EntitySet Name="Pessoa" EntityType="Self.Pessoa" />
+    <EntitySet Name="PessoaFisica" EntityType="Self.PessoaFisica" />
+    <EntitySet Name="PessoaJuridica" EntityType="Self.PessoaJuridica" />
+    <EntitySet Name="Proposta" EntityType="Self.Proposta" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Celular_Pessoa" Association="Self.FK_Celular_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Celular" EntitySet="Celular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proposta_Celular" Association="Self.FK_Proposta_Celular">
+      <End Role="Celular" EntitySet="Celular" />
+      <End Role="Proposta" EntitySet="Proposta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Pessoa" Association="Self.FK_Endereco_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaFisica_Pessoa" Association="Self.FK_PessoaFisica_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="PessoaFisica" EntitySet="PessoaFisica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaJuridica_Pessoa" Association="Self.FK_PessoaJuridica_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="PessoaJuridica" EntitySet="PessoaJuridica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proposta_PessoaJuridica" Association="Self.FK_Proposta_PessoaJuridica">
+      <End Role="PessoaJuridica" EntitySet="PessoaJuridica" />
+      <End Role="Proposta" EntitySet="Proposta" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BDTCCModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BDTCCModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

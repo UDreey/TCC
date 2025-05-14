@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "LoginPessoa";
+}
+
+
+<form name="form1" action="/Pessoa/LoginPessoa" method="post">
+        <div class="form">          
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Email"
+                       name="email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password"
+                       class="form-control"
+                       id="exampleInputPassword1"
+                       placeholder="Digite sua Senha"
+                       name="senha">
+            </div>
+            <div id="butao">
+                <button type="submit" class="btn btn-primary">LOGAR</button>
+                <a href="#"><h4>Não Possui Login</h4></a>
+            </div>
+        </div>
+</form>

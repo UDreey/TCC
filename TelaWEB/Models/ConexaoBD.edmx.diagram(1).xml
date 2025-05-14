@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="158c52ad9faa4bbaa36b1bafab6f9ef9" Name="Diagram1">
+        <EntityTypeShape EntityType="bdReciclaModel.Celular" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.Endereco" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.Pessoa" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.PessoaFisica" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.PessoaJuridica" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.Proposta" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdReciclaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="bdReciclaModel.FK_Pessoa_Celular" ManuallyRouted="false" />
+        <AssociationConnector Association="bdReciclaModel.FK_Proposta_Celular" ManuallyRouted="false" />
+        <AssociationConnector Association="bdReciclaModel.FK_Endereco_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="bdReciclaModel.FK_PessoaFisica_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="bdReciclaModel.FK_PessoaJuridica_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="bdReciclaModel.FK_Proposta_PessoaJuridica" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

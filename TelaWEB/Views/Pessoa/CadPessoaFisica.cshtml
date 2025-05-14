@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "CadastroPessoaFisica";
+}
+
+<div>
+    <nav>
+        <ul class="NAV">
+            <li><a href="/Home/Index">VOLTAR PARA TELA INICIAL</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+
+
+<div class="tableCad2" >
+
+    <form name="form1" action="/Pessoa/CadPessoaFisica" method="post">
+        <h1>Cadastro</h1>
+        <div class="form-group">
+
+            <label for="exampleInputEmail1">Email </label>
+            <div class="input">
+                <input type="email"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Email"
+                       name="email">
+            </div>
+
+
+            <label for="exampleInputEmail1">Senha </label>
+            <div class="input">
+                <input type="password"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Sua Senha"
+                       name="senha">
+            </div>
+
+
+            <label for="exampleInputEmail1">Nome </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Nome"
+                       name="nome">
+            </div>
+
+
+            <label for="exampleInputEmail1">Telefone </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe seu Telefone"
+                       name="telefone">
+
+            </div>
+            <label for="exampleInputEmail1">Data de Nascimento </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Sua Data de Nascimento"
+                       name="dataNascimento">
+
+            </div>
+
+            <label for="exampleInputEmail1">cpf </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Seu cpf "
+                       name="cpf">
+            </div>
+
+
+            <label for="exampleInputEmail1">CEP </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Seu CEP "
+                       name="cep">
+            </div>
+
+
+            <label for="exampleInputEmail1">Bairro </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Seu Bairro "
+                       name="bairro">
+
+            </div>
+
+            <label for="exampleInputEmail1">Rua </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Sua Rua "
+                       name="rua">
+
+            </div>
+
+            <label for="exampleInputEmail1">Cidade </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Sua Cidade "
+                       name="cidade">
+
+            </div>
+
+            <label for="exampleInputEmail1">Estado </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe Seu Estado "
+                       name="estado">
+
+
+            </div>
+
+            <label for="exampleInputEmail1">Numero da Casa </label>
+            <div class="input">
+                <input type="text"
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Informe O Numero Da Casa"
+                       name="numeroCasa">
+            </div>
+
+
+            <label for="exampleInputEmail1">Sexo </label>
+            <div class="input">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="M">
+                    <label class="form-check-label" for="flexRadioDefault1"> Masculino </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" value="F">
+                    <label class="form-check-label" for="flexRadioDefault1"> Feminino </label>
+                </div>
+            </div>
+        </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
